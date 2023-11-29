@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/components/colors.dart';
 
-const baseURL = 'http://192.168.100.207:8000/api';
+const baseURL = 'http://192.168.100.7:8000/api';
 const loginURL = baseURL + '/login';
 const registerURL = baseURL + '/register';
 const logoutURL = baseURL + '/logout';
