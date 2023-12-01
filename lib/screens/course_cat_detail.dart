@@ -1,243 +1,12 @@
-// import 'package:flutter/foundation.dart';
-// import 'package:flutter/material.dart';
-// import 'package:flutter_app/screens/course_lesson_videos.dart';
-// import 'course_single_video.dart';
-// import 'courses.dart';
-
-// class CourseCatDetail extends StatelessWidget {
-// final List<String> categories = [
-//   "All Topics",
-//   "Technology",
-//   "Arts",
-//   "Engineering",
-//   "Marketing",
-//   "Business",
-//   "Guitar",
-//   "AI",
-//   "Design",
-//   "Music"
-// ];
-
-// final String selectedCategory;
-
-// CourseCatDetail({required this.selectedCategory});
-
-// @override
-// Widget build(BuildContext context) {
-//   return Scaffold(
-//     backgroundColor: Colors.white,
-//     appBar: AppBar(
-//       backgroundColor: Colors.deepPurpleAccent,
-//       title: Text(
-//         selectedCategory,
-//         style: TextStyle(color: Colors.white),
-//       ),
-//       leading: IconButton(
-//         icon: Icon(Icons.arrow_back),
-//         onPressed: () {
-//           Navigator.of(context).popUntil((route) => route.isFirst);
-//         },
-//       ),
-//     ),
-//     body: Padding(
-//       padding: const EdgeInsets.all(16.0),
-//       child: ListView(
-//         shrinkWrap: true,
-//         children: [
-//           //SizedBox(height: 8),
-
-//           Row(
-//             children: [
-//               Text(
-//                 selectedCategory,
-//                 style: TextStyle(
-//                   fontSize: 20,
-//                   fontWeight: FontWeight.bold,
-//                 ),
-//               ),
-//               Expanded(
-//                 child: Align(
-//                   alignment: Alignment.centerRight,
-//                   child: TextButton(
-//                     onPressed: () {
-//                       // Handle "See All" button tap
-//                     },
-//                     child: Padding(
-//                       padding: const EdgeInsets.only(left: 10.0),
-//                       child: Text(
-//                         'See All',
-//                         style: TextStyle(
-//                           color: Colors.blue,
-//                           fontWeight: FontWeight.bold,
-//                         ),
-//                       ),
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//             ],
-//           ),
-//           SizedBox(height: 8),
-//           Container(
-//             height: 250,
-//             child: ListView.builder(
-//               scrollDirection: Axis.horizontal,
-//               itemCount: 10,
-//               itemBuilder: (BuildContext context, int index) {
-//                 return Container(
-//                   margin: EdgeInsets.only(right: 10.0),
-//                   decoration: BoxDecoration(
-//                     color: Colors.white,
-//                     borderRadius: BorderRadius.circular(5.0),
-//                     boxShadow: [
-//                       BoxShadow(
-//                         color: Colors.black.withOpacity(0.3),
-//                         offset: Offset(2.0, 2.0),
-//                         blurRadius: 4.0,
-//                       ),
-//                     ],
-//                   ),
-//                   child: Padding(
-//                     padding: const EdgeInsets.only(left: 15),
-//                     child: SizedBox(
-//                       width: 140,
-//                       height: 140,
-//                       child: Center(
-//                         child: Column(
-//                           mainAxisAlignment: MainAxisAlignment.center,
-//                           children: [
-//                             CourseCard(
-//                               courseTitle: 'Course $index',
-//                               authorName: 'Author Name',
-//                               imageAssetPath: 'images/CourseIntro$index.jpg',
-//                             ),
-//                           ],
-//                         ),
-//                       ),
-//                     ),
-//                   ),
-//                 );
-//               },
-//             ),
-//           ),
-// SizedBox(height: 20),
-// SingleChildScrollView(
-//   scrollDirection: Axis.horizontal,
-//   child: Row(
-//     children: categories.map((category) {
-//       return Container(
-//         margin: EdgeInsets.only(right: 10),
-//         child: ElevatedButton(
-//           onPressed: () {
-//             // Handle category selection
-//             Navigator.push(
-//               context,
-//               MaterialPageRoute(
-//                 builder: (context) => CourseCatDetail(
-//                   selectedCategory: category,
-//                 ),
-//               ),
-//             );
-//           },
-//           child: Text(category),
-//         ),
-//       );
-//     }).toList(),
-//   ),
-// ),
-//             SizedBox(height: 10),
-//             Row(
-//               children: [
-//                 Text(
-//                   'Latest',
-//                   style: TextStyle(
-//                     fontSize: 20,
-//                     fontWeight: FontWeight.bold,
-//                   ),
-//                 ),
-//                 Expanded(
-//                   child: Align(
-//                     alignment: Alignment.centerRight,
-//                     child: TextButton(
-//                       onPressed: () {
-//                         // Handle "See All" button tap
-//                       },
-//                       child: Padding(
-//                         padding: const EdgeInsets.only(left: 10.0),
-//                         child: Text(
-//                           'See All',
-//                           style: TextStyle(
-//                             color: Colors.blue,
-//                             fontWeight: FontWeight.bold,
-//                           ),
-//                         ),
-//                       ),
-//                     ),
-//                   ),
-//                 ),
-//               ],
-//             ),
-//             SizedBox(height: 8),
-//             Container(
-//               height: 250,
-//               child: ListView.builder(
-//                 scrollDirection: Axis.horizontal,
-//                 itemCount: 10,
-//                 itemBuilder: (BuildContext context, int index) {
-//                   return Container(
-//                     margin: EdgeInsets.only(right: 10.0),
-//                     decoration: BoxDecoration(
-//                       color: Colors.white,
-//                       borderRadius: BorderRadius.circular(5.0),
-//                       boxShadow: [
-//                         BoxShadow(
-//                           color: Colors.black.withOpacity(0.3),
-//                           offset: Offset(2.0, 2.0),
-//                           blurRadius: 4.0,
-//                         ),
-//                       ],
-//                     ),
-//                     child: Padding(
-//                       padding: const EdgeInsets.only(left: 15),
-//                       child: SizedBox(
-//                         width: 140,
-//                         height: 140,
-//                         child: Center(
-//                           child: Column(
-//                             mainAxisAlignment: MainAxisAlignment.center,
-//                             children: [
-//                               CourseCard(
-//                                 courseTitle: 'Course $index',
-//                                 authorName: 'Author Name',
-//                                 imageAssetPath: 'images/CourseIntro$index.jpg',
-//                               ),
-//                             ],
-//                           ),
-//                         ),
-//                       ),
-//                     ),
-//                   );
-//                 },
-//               ),
-//             ),
-
-//             SizedBox(height: 16),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-//----------------------------- Card
-//------------------------------
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
 
 import 'package:flutter_app/screens/course_lesson_videos.dart';
 import '../components/colors.dart';
 import 'course_single_video.dart';
+
+import 'package:flutter_app/components/colors.dart';
+
 import 'courses.dart';
 
 class CourseCatDetail extends StatefulWidget {
@@ -270,6 +39,7 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
       appBar: AppBar(
         backgroundColor: tuDarkBlue,
         title: Text(widget.selectedCategory,
+<<<<<<< Updated upstream
             style: const TextStyle(color: Colors.white)),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
@@ -278,6 +48,16 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
             Navigator.of(context).popUntil((route) => route.isFirst);
           },
         ),
+=======
+            style: TextStyle(color: Colors.white)),
+        // leading: IconButton(
+        //   icon: Icon(Icons.arrow_back),
+        //   color: Colors.white,
+        //   onPressed: () {
+        //     Navigator.of(context).popUntil((route) => route.isFirst);
+        //   },
+        // ),
+>>>>>>> Stashed changes
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -305,7 +85,7 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
                         child: Text(
                           'See All',
                           style: TextStyle(
-                            color: Colors.blue,
+                            color: Color(0xFF4d4dbf),
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -399,7 +179,11 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
                 },
               ),
             ),
+<<<<<<< Updated upstream
             const SizedBox(height: 20),
+=======
+            // SizedBox(height: 10),
+>>>>>>> Stashed changes
             // SingleChildScrollView(
             //   scrollDirection: Axis.horizontal,
             //   child: Row(
@@ -453,7 +237,7 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
                         child: Text(
                           'See All',
                           style: TextStyle(
-                            color: Colors.blue,
+                            color: Color(0xFF4d4dbf),
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -569,7 +353,7 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
                         child: Text(
                           'See All',
                           style: TextStyle(
-                            color: Colors.blue,
+                            color: Color(0xFF4d4dbf),
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -670,6 +454,7 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
     );
   }
 }
+<<<<<<< Updated upstream
 
 // class CourseCard extends StatelessWidget {
 //   final String courseTitle;
@@ -756,3 +541,5 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
 //     );
 //   }
 // }
+=======
+>>>>>>> Stashed changes

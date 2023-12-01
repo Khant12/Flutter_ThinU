@@ -6,7 +6,6 @@ import 'package:flutter_app/screens/post_screen.dart';
 import 'package:flutter_app/screens/watchList.dart';
 
 import 'profile.dart';
-import 'search.dart';
 import 'notifications.dart';
 import 'subscription.dart';
 

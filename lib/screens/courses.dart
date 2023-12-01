@@ -29,7 +29,7 @@ class _CourseListScreenState extends State<CourseListScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 8),
         child: ListView(
           shrinkWrap: true,
           children: [
@@ -88,11 +88,22 @@ class _CourseListScreenState extends State<CourseListScreen> {
             const SizedBox(height: 16),
             Row(
               children: [
+<<<<<<< Updated upstream
                 const Text(
                   'Recommended For You',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
+=======
+                Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Text(
+                    'Recommendation',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+>>>>>>> Stashed changes
                   ),
                 ),
                 Expanded(
@@ -119,7 +130,7 @@ class _CourseListScreenState extends State<CourseListScreen> {
             ),
             const SizedBox(height: 8),
             Container(
-              height: 280,
+              height: 270,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 10,
@@ -132,7 +143,14 @@ class _CourseListScreenState extends State<CourseListScreen> {
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withOpacity(0.3),
+<<<<<<< Updated upstream
                           offset: const Offset(2.0, 2.0),
+=======
+                          offset: Offset(
+                            2.0,
+                            2.0,
+                          ),
+>>>>>>> Stashed changes
                           blurRadius: 4.0,
                         ),
                       ],
@@ -204,11 +222,22 @@ class _CourseListScreenState extends State<CourseListScreen> {
             const SizedBox(height: 12),
             Row(
               children: [
+<<<<<<< Updated upstream
                 const Text(
                   'Popular For Python',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
+=======
+                Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Text(
+                    'Latest',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+>>>>>>> Stashed changes
                   ),
                 ),
                 Expanded(
@@ -235,7 +264,7 @@ class _CourseListScreenState extends State<CourseListScreen> {
             ),
             const SizedBox(height: 8),
             Container(
-              height: 280,
+              height: 270,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 10,
