@@ -32,7 +32,7 @@ class ExpandedPostPage extends StatelessWidget {
       filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
       child: Center(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(12, 40, 12, 32),
+          padding: const EdgeInsets.fromLTRB(5, 40, 5, 20),
           child: Material(
             color: Colors.white,
             elevation: 2,
@@ -44,25 +44,26 @@ class ExpandedPostPage extends StatelessWidget {
                 Stack(
                   children: [
                     ClipRRect(
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(7.5),
                         topRight: Radius.circular(7.5),
                       ),
                       child: Container(
                         height: 66,
                         color: tuDarkBlue,
-                        padding: EdgeInsets.symmetric(horizontal: 4, vertical:7),
+                        padding: const EdgeInsets.fromLTRB(5, 11, 11, 0),
                         child: SingleChildScrollView(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Padding(
                                 padding:
-                                EdgeInsets.symmetric(horizontal: 11),
+                                const EdgeInsets.symmetric(horizontal: 11),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
 
                                   children: [
+
                                     Container(
                                       width: 40,
                                       height: 40,
@@ -70,25 +71,18 @@ class ExpandedPostPage extends StatelessWidget {
                                         image: posterImage != null
                                             ? DecorationImage(
                                             image: NetworkImage(
-                                                '${posterImage}'))
+                                                '$posterImage'))
                                             : null,
                                         borderRadius:
                                         BorderRadius.circular(25),
                                         border: Border.all(
                                           color: tuLightBlue, // Border color
-                                          width: 2, // Border width
+                                          width: 1, // Border width
                                         ),
                                       ),
-                                      child: const CircleAvatar(
-                                        radius: 28, // Adjust the radius to increase the size
-                                        backgroundColor: Colors.grey, // Background color for the CircleAvatar
-                                        child: Icon(
-                                          Icons.person, // You can replace this with your profile picture
-                                          color: Colors.white, // Icon color
-                                        ),
-                                      ),
+
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 10,
                                     ),
                                     Column(
@@ -97,14 +91,14 @@ class ExpandedPostPage extends StatelessWidget {
                                         children: [
                                           Text(
                                             '${poster}',
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 color: Colors.white,
                                                 fontWeight: FontWeight.w600,
                                                 fontSize: 18),
                                           ),
                                           Text(
                                             DateFormat('HH:mm, dd/MM/yy').format(time),
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                               color: Colors.white,
                                               fontSize: 14,
                                             ),
@@ -125,7 +119,7 @@ class ExpandedPostPage extends StatelessWidget {
                       right: 0,
                       child: IconButton(
                         color: Colors.white,
-                        icon: Icon(Icons.close),
+                        icon: const Icon(Icons.close),
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
@@ -152,12 +146,12 @@ class ExpandedPostPage extends StatelessWidget {
                             : SizedBox(
                           height: postImage != null ? 0 : 10,
                         ),
-                        SizedBox(height: 5),
+                        const SizedBox(height: 5),
                         Padding(
-                          padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
+                          padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
                           child: Text(
                             postBody!,
-                            style: TextStyle(fontSize: 18),
+                            style: const TextStyle(fontSize: 18),
                           ),
                         ),
                       ],
@@ -445,14 +439,7 @@ class _PostScreenSavedState extends State<PostScreenSaved> {
                                           width: 2, // Border width
                                         ),
                                       ),
-                                      child: const CircleAvatar(
-                                        radius: 25, // Adjust the radius to increase the size
-                                        backgroundColor: Colors.grey, // Background color for the CircleAvatar
-                                        child: Icon(
-                                          Icons.person, // You can replace this with your profile picture
-                                          color: Colors.white, // Icon color
-                                        ),
-                                      ),
+
                                     ),
                                     SizedBox(
                                       width: 10,
@@ -557,7 +544,15 @@ class _PostScreenSavedState extends State<PostScreenSaved> {
                                         mainAxisAlignment: MainAxisAlignment.start,
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
-                                          Text("${post.body}"),
+                                      Text(
+                                      "${post.body}",
+                                        // Center align the text
+                                        style: const TextStyle(
+                                          // Make the text bold
+                                          fontSize: 19.0, // Set the font size to 18
+                                        ),
+                                      ),
+                                          SizedBox(height: 10),
                                           ReadMoreText(
                                             '${post.title}  ',
                                             colorClickableText: Colors.blueGrey,
@@ -566,14 +561,14 @@ class _PostScreenSavedState extends State<PostScreenSaved> {
                                             trimCollapsedText: 'Read more',
                                             trimExpandedText: 'Read less',
                                             style: TextStyle(
-                                              fontSize: 16,
+                                              fontSize: 17,
                                             ),
                                             moreStyle: TextStyle(
-                                              fontSize: 16,
+                                              fontSize: 17,
                                               fontWeight: FontWeight.bold,
                                             ),
                                             lessStyle: TextStyle(
-                                              fontSize: 16,
+                                              fontSize: 17,
                                               fontWeight: FontWeight.bold,
                                             ),
                                           ),

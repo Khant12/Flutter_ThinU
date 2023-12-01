@@ -40,7 +40,7 @@ class ExpandedPostPage extends StatelessWidget {
       filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
       child: Center(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(12, 40, 12, 32),
+          padding: const EdgeInsets.fromLTRB(5, 40, 5, 20),
           child: Material(
             color: Colors.white,
             elevation: 2,
@@ -59,7 +59,7 @@ class ExpandedPostPage extends StatelessWidget {
                       child: Container(
                         height: 66,
                         color: tuDarkBlue,
-                        padding: const EdgeInsets.symmetric(horizontal: 4, vertical:7),
+                        padding: const EdgeInsets.fromLTRB(5, 11, 11, 0),
                         child: SingleChildScrollView(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -71,6 +71,7 @@ class ExpandedPostPage extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.start,
 
                                   children: [
+
                                     Container(
                                       width: 40,
                                       height: 40,
@@ -87,14 +88,7 @@ class ExpandedPostPage extends StatelessWidget {
                                           width: 1, // Border width
                                         ),
                                       ),
-                                      child: const CircleAvatar(
-                                        radius: 28, // Adjust the radius to increase the size
-                                        backgroundColor: Colors.grey, // Background color for the CircleAvatar
-                                        child: Icon(
-                                          Icons.person, // You can replace this with your profile picture
-                                          color: Colors.white, // Icon color
-                                        ),
-                                      ),
+
                                     ),
                                     const SizedBox(
                                       width: 10,
@@ -162,7 +156,7 @@ class ExpandedPostPage extends StatelessWidget {
                         ),
                         const SizedBox(height: 5),
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                          padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
                           child: Text(
                             postBody!,
                             style: const TextStyle(fontSize: 18),
@@ -590,16 +584,15 @@ class _PostScreenState extends State<PostScreen> {
                                               mainAxisAlignment: MainAxisAlignment.start,
                                               crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
-                                                Center(
-                                                  child:Text(
-                                                    "${post.body}",
-                                                    textAlign: TextAlign.center, // Center align the text
-                                                    style: const TextStyle(
-                                                      fontWeight: FontWeight.bold, // Make the text bold
-                                                      fontSize: 18.0, // Set the font size to 18
-                                                    ),
+                                                Text(
+                                                  "${post.body}",
+                                                   // Center align the text
+                                                  style: const TextStyle(
+                                                     // Make the text bold
+                                                    fontSize: 19.0, // Set the font size to 18
                                                   ),
                                                 ),
+                                                SizedBox(height: 10),
                                                 ReadMoreText(
                                                   '${post.title}  ',
                                                   colorClickableText: Colors.blueGrey,
@@ -608,14 +601,14 @@ class _PostScreenState extends State<PostScreen> {
                                                   trimCollapsedText: 'Read more',
                                                   trimExpandedText: 'Read less',
                                                   style: const TextStyle(
-                                                    fontSize: 16,
+                                                    fontSize: 17,
                                                   ),
                                                   moreStyle: const TextStyle(
-                                                    fontSize: 16,
+                                                    fontSize: 17,
                                                     fontWeight: FontWeight.bold,
                                                   ),
                                                   lessStyle: const TextStyle(
-                                                    fontSize: 16,
+                                                    fontSize: 17,
                                                     fontWeight: FontWeight.bold,
                                                   ),
                                                 ),
@@ -633,20 +626,18 @@ class _PostScreenState extends State<PostScreen> {
                                             mainAxisAlignment: MainAxisAlignment.start,
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
-                                              Center(
-                                                child:Text(
-                                                  "${post.body}",
-                                                  textAlign: TextAlign.center, // Center align the text
-                                                  style: const TextStyle(
-                                                    fontWeight: FontWeight.bold, // Make the text bold
-                                                    fontSize: 18.0, // Set the font size to 18
-                                                  ),
+                                              Text(
+                                                "${post.body}",
+                                                 // Center align the text
+                                                style: const TextStyle(
+                                                   // Make the text bold
+                                                  fontSize: 19.0, // Set the font size to 18
                                                 ),
                                               ),
                                               Text(
                                                 '${post.title}',
                                                 style: const TextStyle(
-                                                  fontSize: 16,
+                                                  fontSize: 17,
                                                 ),
                                               ),
                                             ],
