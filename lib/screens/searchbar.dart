@@ -80,7 +80,7 @@ class _SearchPageState extends State<SearchPage> {
         future: _loadCategories(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else {
@@ -105,7 +105,7 @@ class _SearchPageState extends State<SearchPage> {
                   },
                 ),
                 transition: SlideFadeFloatingSearchBarTransition(),
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 title: Text(
                   selectedTerm ?? 'Search Categories...',
                   style: Theme.of(context).textTheme.headline6,
@@ -222,7 +222,7 @@ class SearchResultsListView extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
+            const Icon(
               Icons.search,
               size: 64,
             ),
@@ -242,7 +242,7 @@ class SearchResultsListView extends StatelessWidget {
 
     return filteredCategories.isNotEmpty
         ? ListView(
-            padding: EdgeInsets.only(top: 80),
+            padding: const EdgeInsets.only(top: 80),
             children: List.generate(
               filteredCategories.length,
               (index) => ListTile(

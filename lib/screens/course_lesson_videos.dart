@@ -30,7 +30,7 @@ class _CourseLessonScreenState extends State<CourseLessonScreen> {
 
   _buildProfileInfo() {
     if (_channel == null) {
-      return CircularProgressIndicator();
+      return const CircularProgressIndicator();
     }
     return Container(
 
@@ -95,10 +95,10 @@ class _CourseLessonScreenState extends State<CourseLessonScreen> {
         ),
       ),
       child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 0.0, vertical: 3.0),
+          margin: const EdgeInsets.symmetric(horizontal: 0.0, vertical: 3.0),
           height: 70.0,
           decoration: BoxDecoration(
-            color: Color(0x0D000000),
+            color: const Color(0x0D000000),
             borderRadius: BorderRadius.circular(5),
             // boxShadow: [
             //   BoxShadow(
@@ -117,20 +117,20 @@ class _CourseLessonScreenState extends State<CourseLessonScreen> {
                   image: NetworkImage(video.thumbnailUrl),
                 ),
               ),
-              SizedBox(width: 10.0),
+              const SizedBox(width: 10.0),
               Expanded(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
                       video.title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black,
                         fontSize: 18.0,
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 8.0),
+                    const Padding(
+                      padding: EdgeInsets.only(right: 8.0),
                       child: Align(
                         alignment: Alignment.centerRight,
                         child: Icon(
@@ -213,16 +213,15 @@ class _CourseLessonScreenState extends State<CourseLessonScreen> {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(5),
           child: Container(
-            color: Color(0x0D000000),
-            padding: EdgeInsets.all(16.0),
-            child: Row(
+            color: const Color(0x0D000000),
+            padding: const EdgeInsets.all(16.0),
+            child: const Row(
               children: <Widget>[
                 Expanded(
                   child: Row(
-                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Padding(
-                        padding: const EdgeInsets.only(right: 5.0),
+                        padding: EdgeInsets.only(right: 5.0),
                         child: Align(
                           alignment: Alignment.centerRight,
                           child: Icon(

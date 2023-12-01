@@ -52,21 +52,21 @@ class ExpandedPostPage extends StatelessWidget {
                 Stack(
                   children: [
                     ClipRRect(
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(7.5),
                         topRight: Radius.circular(7.5),
                       ),
                       child: Container(
                         height: 66,
                         color: tuDarkBlue,
-                        padding: EdgeInsets.symmetric(horizontal: 4, vertical:7),
+                        padding: const EdgeInsets.symmetric(horizontal: 4, vertical:7),
                         child: SingleChildScrollView(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Padding(
                                 padding:
-                                EdgeInsets.symmetric(horizontal: 11),
+                                const EdgeInsets.symmetric(horizontal: 11),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
 
@@ -84,7 +84,7 @@ class ExpandedPostPage extends StatelessWidget {
                                         BorderRadius.circular(25),
                                         border: Border.all(
                                           color: tuLightBlue, // Border color
-                                          width: 2, // Border width
+                                          width: 1, // Border width
                                         ),
                                       ),
                                       child: const CircleAvatar(
@@ -96,7 +96,7 @@ class ExpandedPostPage extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 10,
                                     ),
                                     Column(
@@ -105,14 +105,14 @@ class ExpandedPostPage extends StatelessWidget {
                                         children: [
                                           Text(
                                             '${poster}',
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 color: Colors.white,
                                                 fontWeight: FontWeight.w600,
                                                 fontSize: 18),
                                           ),
                                           Text(
                                             DateFormat('HH:mm, dd/MM/yy').format(time),
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                               color: Colors.white,
                                               fontSize: 14,
                                             ),
@@ -133,7 +133,7 @@ class ExpandedPostPage extends StatelessWidget {
                       right: 0,
                       child: IconButton(
                         color: Colors.white,
-                        icon: Icon(Icons.close),
+                        icon: const Icon(Icons.close),
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
@@ -160,12 +160,12 @@ class ExpandedPostPage extends StatelessWidget {
                             : SizedBox(
                           height: postImage != null ? 0 : 10,
                         ),
-                        SizedBox(height: 5),
+                        const SizedBox(height: 5),
                         Padding(
-                          padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
+                          padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
                           child: Text(
                             postBody!,
-                            style: TextStyle(fontSize: 18),
+                            style: const TextStyle(fontSize: 18),
                           ),
                         ),
                       ],
@@ -338,14 +338,14 @@ class _PostScreenState extends State<PostScreen> {
               height: 1000, // Set the width to 600 pixels
               child: Stack(
                 children: <Widget>[
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   SingleChildScrollView(
                     child: Container(
                       width: 300, // Set the width as needed
-                      padding: EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(16),
                       child: Text(
                         postBody!,
-                        style: TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 18),
                       ),
                     ),
                   ),
@@ -353,7 +353,7 @@ class _PostScreenState extends State<PostScreen> {
                     top: 10, // Adjust the top position as needed
                     right: 10, // Adjust the right position as needed
                     child: IconButton(
-                      icon: Icon(Icons.close), // Use the "close" icon or any other icon you prefer
+                      icon: const Icon(Icons.close), // Use the "close" icon or any other icon you prefer
                       onPressed: () {
                         Navigator.of(context).pop();
                       },
@@ -385,7 +385,7 @@ class _PostScreenState extends State<PostScreen> {
   @override
   Widget build(BuildContext context) {
     return _loading
-        ? Center(child: CircularProgressIndicator())
+        ? const Center(child: CircularProgressIndicator())
         : RefreshIndicator(
       onRefresh: () {
         return retrievePosts();
@@ -399,7 +399,7 @@ class _PostScreenState extends State<PostScreen> {
                   title: 'Add new post',
                 )));
           },
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
         ),
         floatingActionButtonLocation:
         FloatingActionButtonLocation.endFloat,
@@ -456,7 +456,7 @@ class _PostScreenState extends State<PostScreen> {
                                   children: [
                                     Padding(
                                       padding:
-                                      EdgeInsets.symmetric(horizontal: 11),
+                                      const EdgeInsets.symmetric(horizontal: 11),
                                       child: Row(
                                         mainAxisAlignment: MainAxisAlignment.start,
 
@@ -470,19 +470,19 @@ class _PostScreenState extends State<PostScreen> {
                                                 image: NetworkImage('${post.user!.image}'),
                                                 fit: BoxFit.cover, // Adjust the fit based on your design requirements
                                               )
-                                                  : DecorationImage(
+                                                  : const DecorationImage(
                                                 image: AssetImage('images/default.png'), // Provide the path to your default image
                                                 fit: BoxFit.cover,
                                               ),
                                               borderRadius: BorderRadius.circular(25),
                                               border: Border.all(
                                                 color: tuDarkBlue,
-                                                width: 2,
+                                                width: 1,
                                               ),
                                             ),
                                           ),
 
-                                          SizedBox(
+                                          const SizedBox(
                                             width: 10,
                                           ),
                                           Column(
@@ -491,13 +491,13 @@ class _PostScreenState extends State<PostScreen> {
                                               children: [
                                                 Text(
                                                   '${post.user!.name}',
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                       fontWeight: FontWeight.w600,
                                                       fontSize: 18),
                                                 ),
                                                 Text(
                                                   DateFormat('HH:mm, dd/MM/yy').format(localDateTime),
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                     fontSize: 14,
                                                   ),
                                                 ),
@@ -509,7 +509,7 @@ class _PostScreenState extends State<PostScreen> {
                                     ),
                                     post.user!.id == userId
                                         ? PopupMenuButton(
-                                      child: Padding(
+                                      child: const Padding(
                                           padding:
                                           EdgeInsets.only(right: 10),
                                           child: Icon(
@@ -517,10 +517,10 @@ class _PostScreenState extends State<PostScreen> {
                                             color: Colors.black,
                                           )),
                                       itemBuilder: (context) => [
-                                        PopupMenuItem(
+                                        const PopupMenuItem(
                                             child: Text('Edit'),
                                             value: 'edit'),
-                                        PopupMenuItem(
+                                        const PopupMenuItem(
                                             child: Text('Delete'),
                                             value: 'delete')
                                       ],
@@ -538,10 +538,10 @@ class _PostScreenState extends State<PostScreen> {
                                         }
                                       },
                                     )
-                                        : SizedBox()
+                                        : const SizedBox()
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 8,
                                 ),
                                 Column(
@@ -594,7 +594,7 @@ class _PostScreenState extends State<PostScreen> {
                                                   child:Text(
                                                     "${post.body}",
                                                     textAlign: TextAlign.center, // Center align the text
-                                                    style: TextStyle(
+                                                    style: const TextStyle(
                                                       fontWeight: FontWeight.bold, // Make the text bold
                                                       fontSize: 18.0, // Set the font size to 18
                                                     ),
@@ -607,14 +607,14 @@ class _PostScreenState extends State<PostScreen> {
                                                   trimMode: TrimMode.Length,
                                                   trimCollapsedText: 'Read more',
                                                   trimExpandedText: 'Read less',
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                     fontSize: 16,
                                                   ),
-                                                  moreStyle: TextStyle(
+                                                  moreStyle: const TextStyle(
                                                     fontSize: 16,
                                                     fontWeight: FontWeight.bold,
                                                   ),
-                                                  lessStyle: TextStyle(
+                                                  lessStyle: const TextStyle(
                                                     fontSize: 16,
                                                     fontWeight: FontWeight.bold,
                                                   ),
@@ -637,7 +637,7 @@ class _PostScreenState extends State<PostScreen> {
                                                 child:Text(
                                                   "${post.body}",
                                                   textAlign: TextAlign.center, // Center align the text
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                     fontWeight: FontWeight.bold, // Make the text bold
                                                     fontSize: 18.0, // Set the font size to 18
                                                   ),
@@ -645,7 +645,7 @@ class _PostScreenState extends State<PostScreen> {
                                               ),
                                               Text(
                                                 '${post.title}',
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                   fontSize: 16,
                                                 ),
                                               ),

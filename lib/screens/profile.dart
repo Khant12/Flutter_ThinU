@@ -139,7 +139,7 @@ class _ProfileState extends State<Profile> {
         const Column(
           children: [
             Text(
-              'asdfasdf',
+              'John Doe',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -150,7 +150,7 @@ class _ProfileState extends State<Profile> {
         ),
         const SizedBox(height: 4),
         const Text(
-          '@user_id',
+          '@johndoe324',
           style: TextStyle(
             fontSize: 16,
             color: Colors.grey,

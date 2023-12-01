@@ -53,8 +53,9 @@ class _NavState extends State<Nav> {
             const Text(
               'Thin U', // Title text
               style: TextStyle(
-                  fontSize: 18, // Adjust the font size as needed
-                  color: Colors.black),
+                  fontSize: 20, // Adjust the font size as needed
+                  color: Colors.black,
+              fontWeight: FontWeight.w600),
             ),
           ],
         ),

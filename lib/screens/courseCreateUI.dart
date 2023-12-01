@@ -47,14 +47,14 @@ class _CourseCreateState extends State<CourseCreate> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: tuDarkBlue,
-        title: Text('Create A Course'),
+        title: const Text('Create A Course'),
         actions: <Widget>[
           Container(
-            margin: EdgeInsets.fromLTRB(40, 10, 5, 10),
+            margin: const EdgeInsets.fromLTRB(40, 10, 5, 10),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: tuLightBlue,
-                minimumSize: Size(70, 40), // Change to your desired color
+                minimumSize: const Size(70, 40), // Change to your desired color
               ),
               onPressed: () async {
                 // Get the value of the "Course Title" text field
@@ -75,14 +75,14 @@ class _CourseCreateState extends State<CourseCreate> {
                 // Close the bottom sheet
                 Navigator.of(context).pop();
               },
-              child: Text('Create'),
+              child: const Text('Create'),
             ),
           ),
         ],
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.only(
+          padding: const EdgeInsets.only(
             top: 10,
             left: 15,
             right: 15,
@@ -112,7 +112,7 @@ class _CourseCreateState extends State<CourseCreate> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 20),
+                  const SizedBox(width: 20),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -130,14 +130,14 @@ class _CourseCreateState extends State<CourseCreate> {
               const SizedBox(
                 height: 20,
               ),
-              Text(
+              const Text(
                 'Information About the Course',
                 style: TextStyle(
                   fontWeight: FontWeight.bold, // Apply bold font weight
                   fontSize: 18, // Set the font size to 18
                 ),
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -180,7 +180,7 @@ class _CourseCreateState extends State<CourseCreate> {
               const SizedBox(
                 height: 40,
               ),
-              Text(
+              const Text(
                 'What viewers will learn from this Course?',
                 textAlign: TextAlign.left, // Align text to the left
                 style: TextStyle(
@@ -195,7 +195,7 @@ class _CourseCreateState extends State<CourseCreate> {
                 maxLines: 3,
               ),
               const SizedBox(height: 40),
-              Text(
+              const Text(
                 'What contents will this Course include?',
                 textAlign: TextAlign.left, // Align text to the left
                 style: TextStyle(
@@ -210,7 +210,7 @@ class _CourseCreateState extends State<CourseCreate> {
                 maxLines: 3,
               ),
               const SizedBox(height: 40),
-              Text(
+              const Text(
                 'Requirements needed for the viewers to understand this course',
                 textAlign: TextAlign.left, // Align text to the left
                 style: TextStyle(

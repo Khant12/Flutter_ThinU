@@ -109,6 +109,7 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:flutter_app/components/colors.dart';
 import 'package:flutter_app/screens/courses.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
@@ -136,7 +137,7 @@ class _VideoScreenState extends State<VideoScreen> {
     super.initState();
     _controller = YoutubePlayerController(
       initialVideoId: widget.id,
-      flags: YoutubePlayerFlags(
+      flags: const YoutubePlayerFlags(
         mute: false,
         autoPlay: true,
       ),
@@ -154,10 +155,10 @@ class _VideoScreenState extends State<VideoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepPurpleAccent,
+        backgroundColor: tuDarkBlue,
         title: Text(widget.title),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () { Navigator.push(
             context,
             MaterialPageRoute(
@@ -179,14 +180,14 @@ class _VideoScreenState extends State<VideoScreen> {
               },
             ),
           ),
-          SizedBox(height: 10.0),
+          const SizedBox(height: 10.0),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0),
             child: Column(
               children: [
                 Row(
                   children: [
-                    Text(
+                    const Text(
                       "Author name - ",
                       style: TextStyle(
                         fontSize: 17.0,
@@ -195,7 +196,7 @@ class _VideoScreenState extends State<VideoScreen> {
                     ),
                     Text(
                       widget.title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 17.0,
                         fontWeight: FontWeight.bold,
                       ),
@@ -203,7 +204,7 @@ class _VideoScreenState extends State<VideoScreen> {
                   ],
                 ),
                 Container(
-                  child: Column(
+                  child: const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
@@ -223,7 +224,7 @@ class _VideoScreenState extends State<VideoScreen> {
               ],
             ),
           ),
-          SizedBox(height: 10.0),
+          const SizedBox(height: 10.0),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0),
             child: Container(

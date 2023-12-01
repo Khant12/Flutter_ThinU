@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/screens/savedPosts.dart';
 import 'package:flutter_app/screens/watched_list_course.dart';
 
+import '../components/colors.dart';
 import 'courses.dart';
 
 class WatchList extends StatelessWidget {
@@ -15,14 +16,14 @@ class WatchList extends StatelessWidget {
         body: Column(
           children: [
             Container(
-              color: Color(0xFF6387FF), // Set the background color
-              child: TabBar(
+              color: tuDarkBlue, // Set the background color
+              child: const TabBar(
                 tabs: [
                   Tab(
                     text: 'Saved Articles',
                   ),
                   Tab(
-                    text: 'My Courses',
+                    text: 'Recently Watched',
                   ),
                 ],
                 labelColor: Colors.white, // Text color of the selected tab

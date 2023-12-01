@@ -35,21 +35,21 @@ class _CourseListScreenState extends State<CourseListScreen> {
           children: [
             //SizedBox(height: 8),
             Container(
-              height: 250.0,
+              height: 230.0,
               width: 600.0,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                       fit: BoxFit.contain,
-                      image: AssetImage('images/advertise.jpg'))),
+                      image: AssetImage('images/onlineLearning.jpg'))),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: categories.map((category) {
                   return Container(
-                    margin: EdgeInsets.only(right: 10),
+                    margin: const EdgeInsets.only(right: 10),
                     child: ElevatedButton(
                       onPressed: () {
                         // Handle category selection
@@ -76,8 +76,8 @@ class _CourseListScreenState extends State<CourseListScreen> {
                       ),
                       style: ElevatedButton.styleFrom(
                         primary: selectedCategory == category
-                            ? Color(0xFF4d4dbf)
-                            : Color(0xFF6b86f7),
+                            ? const Color(0xFF4d4dbf)
+                            : const Color(0xFF6b86f7),
                       ),
                     ),
                   );
@@ -85,13 +85,13 @@ class _CourseListScreenState extends State<CourseListScreen> {
               ),
             ),
 
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Row(
               children: [
-                Text(
-                  'Recommendation',
+                const Text(
+                  'Recommended For You',
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -102,8 +102,8 @@ class _CourseListScreenState extends State<CourseListScreen> {
                       onPressed: () {
                         // Handle "See All" button tap
                       },
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
+                      child: const Padding(
+                        padding: EdgeInsets.only(left: 10.0),
                         child: Text(
                           'See All',
                           style: TextStyle(
@@ -117,7 +117,7 @@ class _CourseListScreenState extends State<CourseListScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Container(
               height: 280,
               child: ListView.builder(
@@ -125,14 +125,14 @@ class _CourseListScreenState extends State<CourseListScreen> {
                 itemCount: 10,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                    margin: EdgeInsets.only(right: 10.0),
+                    margin: const EdgeInsets.only(right: 10.0),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(5.0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withOpacity(0.3),
-                          offset: Offset(2.0, 2.0),
+                          offset: const Offset(2.0, 2.0),
                           blurRadius: 4.0,
                         ),
                       ],
@@ -201,13 +201,13 @@ class _CourseListScreenState extends State<CourseListScreen> {
                 },
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 12),
             Row(
               children: [
-                Text(
-                  'Latest',
+                const Text(
+                  'Popular For Python',
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -218,8 +218,8 @@ class _CourseListScreenState extends State<CourseListScreen> {
                       onPressed: () {
                         // Handle "See All" button tap
                       },
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
+                      child: const Padding(
+                        padding: EdgeInsets.only(left: 10.0),
                         child: Text(
                           'See All',
                           style: TextStyle(
@@ -233,7 +233,7 @@ class _CourseListScreenState extends State<CourseListScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Container(
               height: 280,
               child: ListView.builder(
@@ -241,14 +241,14 @@ class _CourseListScreenState extends State<CourseListScreen> {
                 itemCount: 10,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                    margin: EdgeInsets.only(right: 10.0),
+                    margin: const EdgeInsets.only(right: 10.0),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(5.0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withOpacity(0.3),
-                          offset: Offset(2.0, 2.0),
+                          offset: const Offset(2.0, 2.0),
                           blurRadius: 4.0,
                         ),
                       ],
@@ -318,7 +318,7 @@ class _CourseListScreenState extends State<CourseListScreen> {
               ),
             ),
 
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
           ],
         ),
       ),
@@ -351,7 +351,7 @@ class CourseCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200,
+      width: 250,
       //margin: EdgeInsets.only(right: 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -379,37 +379,38 @@ class CourseCard extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Text(
             courseTitle,
-            style: TextStyle(
-              color: Color(0xFF4d4dbf),
+            style: const TextStyle(
+              color: Colors.black,
               fontWeight: FontWeight.bold,
-              fontSize: 17,
+              fontSize: 20,
             ),
           ),
+          const SizedBox(height: 5),
           Text(
             authorName,
             style: TextStyle(
-              color: Color(0xFF6b86f7),
-              fontSize: 13,
-              fontWeight: FontWeight.w300,
+              color: Colors.grey[600],
+              fontSize: 15,
+              fontWeight: FontWeight.w400,
             ),
           ),
-          //SizedBox(height: 8),
+          const SizedBox(height: 5),
           Text(
             description,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.black,
               fontSize: 13,
               fontWeight: FontWeight.w300,
             ),
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           Center(
             child: Container(
-              width: 100,
-              height: 30,
+              width: 140,
+              height: 40,
               child: Padding(
                 padding: const EdgeInsets.only(left: 0.0),
                 child: ElevatedButton(
@@ -425,36 +426,36 @@ class CourseCard extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Color(0xFF4d4dbf),
+                    primary: Colors.grey,
                     elevation: 0,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(2.0),
+                      borderRadius: BorderRadius.circular(5.0),
                     ),
-                    side: BorderSide(
+                    side: const BorderSide(
                       color: Color(0xFF4d4dbf),
                     ),
-                    padding: EdgeInsets.all(0),
+                    padding: const EdgeInsets.all(0),
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   ).copyWith(
                     backgroundColor: MaterialStateProperty.resolveWith<Color>(
                         (Set<MaterialState> states) {
                       if (states.contains(MaterialState.pressed)) {
                         // Return the end color of the gradient when the button is pressed
-                        return Color(0xFF4d4dbf);
+                        return const Color(0xFF4d4dbf);
                       }
                       // Return the start color of the gradient for other states
-                      return Color(0xFF4d4dbf);
+                      return const Color(0xFF4d4dbf);
                     }),
                   ),
                   child: Container(
                     width: 150,
                     height: 50,
                     alignment: Alignment.center,
-                    child: Text(
-                      'View',
+                    child: const Text(
+                      'View Course',
                       style: TextStyle(
                           fontSize: 15,
-                          fontWeight: FontWeight.w300,
+                          fontWeight: FontWeight.w600,
                           color: Colors.white),
                     ),
                   ),
@@ -486,13 +487,13 @@ class CourseDetailScreen extends StatelessWidget {
       builder: (context, orientation) {
         return Scaffold(
           appBar: AppBar(
-            backgroundColor: Color(0xFF4d4dbf),
-            title: Text(
+            backgroundColor: const Color(0xFF4d4dbf),
+            title: const Text(
               'Course Preview',
               style: TextStyle(color: Colors.white),
             ),
             leading: IconButton(
-              icon: Icon(Icons.arrow_back),
+              icon: const Icon(Icons.arrow_back),
               color: Colors.white,
               onPressed: () {
                 Navigator.of(context).popUntil((route) => route.isFirst);
@@ -514,25 +515,25 @@ class CourseDetailScreen extends StatelessWidget {
                 ),
                 // Title and Info
                 Padding(
-                  padding: EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         'Building Web Applications - Intermediate Level',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
-                      Text('Learn how to build a secure ecommerce application'),
-                      SizedBox(
+                      const Text('Learn how to build a secure ecommerce application'),
+                      const SizedBox(
                         height: 10,
                       ),
-                      Row(
+                      const Row(
                         children: [
                           Icon(Icons.star, color: Color(0xFFF3BA27)),
                           Icon(Icons.star, color: Color(0xFFF3BA27)),
@@ -541,30 +542,30 @@ class CourseDetailScreen extends StatelessWidget {
                           Icon(Icons.star_border),
                         ],
                       ),
-                      Row(
+                      const Row(
                         children: [
                           Text('344 ratings, 100 students'),
                         ],
                       ),
-                      SizedBox(height: 16),
-                      Text(
+                      const SizedBox(height: 16),
+                      const Text(
                         'Created by TS',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
                             color: Colors.purple),
                       ),
-                      Row(
+                      const Row(
                         children: [
                           Icon(Icons.warning, color: Colors.black, size: 20),
                           Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
+                            padding: EdgeInsets.only(left: 8.0),
                             child: Text('Last updated 3/2023'),
                           ),
                         ],
                       ),
 
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Container(
@@ -573,18 +574,18 @@ class CourseDetailScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(
                               10.0), // Set the border radius
                         ),
-                        padding: EdgeInsets.all(16.0),
+                        padding: const EdgeInsets.all(16.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
+                            const Text(
                               'What You\'ll Learn',
                               style: TextStyle(
                                 fontSize: 19.0,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            SizedBox(height: 16.0),
+                            const SizedBox(height: 16.0),
                             // List of sentences with "right" icons
                             _buildLearnListItem('How to build a back end API'),
                             _buildLearnListItem(
@@ -594,7 +595,7 @@ class CourseDetailScreen extends StatelessWidget {
                         ),
                       ),
 
-                      SizedBox(height: 15.0),
+                      const SizedBox(height: 15.0),
                       // Lessons Section
 
                       Container(
@@ -603,12 +604,12 @@ class CourseDetailScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(16.0),
                         ),
                         padding:
-                            EdgeInsets.symmetric(vertical: 10.0, horizontal: 5),
+                            const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5),
                         height: 500,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Row(
+                            const Row(
                               children: [
                                 Padding(
                                   padding: EdgeInsets.only(left: 8.0),
@@ -621,7 +622,7 @@ class CourseDetailScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            Row(
+                            const Row(
                               children: [
                                 Padding(
                                   padding: EdgeInsets.only(left: 8.0),
@@ -633,7 +634,7 @@ class CourseDetailScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(height: 20.0),
+                            const SizedBox(height: 20.0),
                             // -------------------------------------Lesson Details
                             // ------------------------------------------
                             // -----------------------------------------
@@ -646,7 +647,7 @@ class CourseDetailScreen extends StatelessWidget {
                         ),
                       ),
 
-                      SizedBox(height: 15),
+                      const SizedBox(height: 15),
 
 //---------------------------------- This course includes
                       // -------------------------------------
@@ -657,8 +658,8 @@ class CourseDetailScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(
                               16.0), // Set the border radius
                         ),
-                        padding: EdgeInsets.all(20.0),
-                        child: Column(
+                        padding: const EdgeInsets.all(20.0),
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
@@ -674,7 +675,7 @@ class CourseDetailScreen extends StatelessWidget {
                                 Icon(Icons.video_library_rounded,
                                     color: Colors.black, size: 17),
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 8.0),
+                                  padding: EdgeInsets.only(left: 8.0),
                                   child: Text('100 minutes on-demand video'),
                                 ),
                               ],
@@ -685,7 +686,7 @@ class CourseDetailScreen extends StatelessWidget {
                                 Icon(Icons.quiz_outlined,
                                     color: Colors.black, size: 17),
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 8.0),
+                                  padding: EdgeInsets.only(left: 8.0),
                                   child: Text('1 Quiz'),
                                 ),
                               ],
@@ -696,7 +697,7 @@ class CourseDetailScreen extends StatelessWidget {
                                 Icon(Icons.file_open,
                                     color: Colors.black, size: 17),
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 8.0),
+                                  padding: EdgeInsets.only(left: 8.0),
                                   child: Text('25 Support files'),
                                 ),
                               ],
@@ -707,7 +708,7 @@ class CourseDetailScreen extends StatelessWidget {
                                 Icon(Icons.mobile_friendly,
                                     color: Colors.black, size: 17),
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 8.0),
+                                  padding: EdgeInsets.only(left: 8.0),
                                   child: Text('Access on mobile and desktop'),
                                 ),
                               ],
@@ -718,7 +719,7 @@ class CourseDetailScreen extends StatelessWidget {
                                 Icon(Icons.price_change,
                                     color: Colors.black, size: 17),
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 8.0),
+                                  padding: EdgeInsets.only(left: 8.0),
                                   child: Text('Certificate of completion'),
                                 ),
                               ],
@@ -727,7 +728,7 @@ class CourseDetailScreen extends StatelessWidget {
                         ),
                       ),
 
-                      SizedBox(height: 15),
+                      const SizedBox(height: 15),
 
                       //---------------------------------- Requirements
                       // -------------------------------------
@@ -739,8 +740,8 @@ class CourseDetailScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(
                               16.0), // Set the border radius
                         ),
-                        padding: EdgeInsets.all(20.0),
-                        child: Column(
+                        padding: const EdgeInsets.all(20.0),
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
@@ -758,7 +759,7 @@ class CourseDetailScreen extends StatelessWidget {
                                 Expanded(
                                   // Wrap the text in an Expanded widget
                                   child: Padding(
-                                    padding: const EdgeInsets.only(left: 8.0),
+                                    padding: EdgeInsets.only(left: 8.0),
                                     child: Text(
                                       'A basic understanding of the programming language',
                                     ),
@@ -774,7 +775,7 @@ class CourseDetailScreen extends StatelessWidget {
                                 Expanded(
                                   // Wrap the text in an Expanded widget
                                   child: Padding(
-                                    padding: const EdgeInsets.only(left: 8.0),
+                                    padding: EdgeInsets.only(left: 8.0),
                                     child: Text(
                                       'A basic understanding of HTML, CSS and JavaScript',
                                     ),
@@ -790,7 +791,7 @@ class CourseDetailScreen extends StatelessWidget {
                                 Expanded(
                                   // Wrap the text in an Expanded widget
                                   child: Padding(
-                                    padding: const EdgeInsets.only(left: 8.0),
+                                    padding: EdgeInsets.only(left: 8.0),
                                     child: Text(
                                         'A basic understanding of SQL Syntax'),
                                   ),
@@ -801,7 +802,7 @@ class CourseDetailScreen extends StatelessWidget {
                         ),
                       ),
 
-                      SizedBox(height: 15),
+                      const SizedBox(height: 15),
 
                       //---------------------------------- Description
                       // -------------------------------------
@@ -812,8 +813,8 @@ class CourseDetailScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(
                               16.0), // Set the border radius
                         ),
-                        padding: EdgeInsets.all(20.0),
-                        child: Column(
+                        padding: const EdgeInsets.all(20.0),
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
@@ -833,7 +834,7 @@ class CourseDetailScreen extends StatelessWidget {
                         ),
                       ),
 
-                      SizedBox(height: 15),
+                      const SizedBox(height: 15),
 
                       Container(
                         decoration: BoxDecoration(
@@ -841,33 +842,33 @@ class CourseDetailScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(
                               16.0), // Set the border radius
                         ),
-                        padding: EdgeInsets.all(20.0),
+                        padding: const EdgeInsets.all(20.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
+                            const Text(
                               'Instructor',
                               style: TextStyle(
                                 fontSize: 19.0,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            SizedBox(height: 16.0),
+                            const SizedBox(height: 16.0),
                             Padding(
-                              padding: EdgeInsets.all(16.0),
+                              padding: const EdgeInsets.all(16.0),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
+                                  const Text(
                                     'John Doe',
                                     style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.purple),
                                   ),
-                                  Text('Ph.D.'),
-                                  SizedBox(height: 8.0),
-                                  Row(
+                                  const Text('Ph.D.'),
+                                  const SizedBox(height: 8.0),
+                                  const Row(
                                     children: [
                                       CircleAvatar(
                                         radius: 50.0,
@@ -896,10 +897,10 @@ class CourseDetailScreen extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 16.0),
+                                  const SizedBox(height: 16.0),
                                   Container(
                                     width: 330, // Adjust the width as needed
-                                    child: Text(
+                                    child: const Text(
                                       'I have twenty years of experience in professional software development, and twenty years of experience as a University professor. As an entrepreneur, I have worked with a broad range of clients, including Thomson.',
                                       textAlign: TextAlign.justify,
                                       style: TextStyle(
@@ -908,7 +909,7 @@ class CourseDetailScreen extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5,
                                   ),
                                 ],
@@ -931,7 +932,7 @@ class CourseDetailScreen extends StatelessWidget {
   Widget _buildLearnListItem(String text) {
     return Row(
       children: [
-        Icon(
+        const Icon(
           Icons.check,
           color: Colors.black,
           size: 20,
@@ -952,12 +953,12 @@ class CourseDetailScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(label),
-        SizedBox(height: 8.0),
+        const SizedBox(height: 8.0),
         Row(
           children: [
             // Filled stars
             for (int i = 0; i < filledStars; i++)
-              Icon(
+              const Icon(
                 Icons.star,
                 color: Colors.yellow,
                 size: 20,
@@ -965,7 +966,7 @@ class CourseDetailScreen extends StatelessWidget {
 
             // Half star if necessary
             if (hasHalfStar)
-              Icon(
+              const Icon(
                 Icons.star_half,
                 color: Colors.yellow,
                 size: 20,
@@ -973,17 +974,17 @@ class CourseDetailScreen extends StatelessWidget {
 
             // Empty stars to complete 5 stars
             for (int i = 0; i < (5 - filledStars - (hasHalfStar ? 1 : 0)); i++)
-              Icon(
+              const Icon(
                 Icons.star_border,
                 color: Colors.black,
                 size: 20,
               ),
 
-            SizedBox(width: 16.0),
+            const SizedBox(width: 16.0),
             Text('$rating / 5.0'), // Display rating out of 5
           ],
         ),
-        SizedBox(height: 16.0),
+        const SizedBox(height: 16.0),
       ],
     );
   }
