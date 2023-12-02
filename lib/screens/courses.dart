@@ -27,7 +27,7 @@ class _CourseListScreenState extends State<CourseListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.white,
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 6),
         child: ListView(
@@ -129,7 +129,7 @@ class _CourseListScreenState extends State<CourseListScreen> {
                 itemCount: 10,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                    margin: EdgeInsets.only(right: 8, left: 10),
+                    margin: EdgeInsets.only(right: 6, left: 10),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(5.0),
@@ -251,7 +251,7 @@ class _CourseListScreenState extends State<CourseListScreen> {
                 itemCount: 10,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                    margin: EdgeInsets.only(right: 8, left: 10),
+                    margin: EdgeInsets.only(right: 6, left: 10),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(5.0),

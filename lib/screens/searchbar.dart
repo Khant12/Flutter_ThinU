@@ -221,258 +221,261 @@ class SearchResultsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (searchTerm == null) {
-      return SingleChildScrollView(
-        child: Center(
-            child: Column(mainAxisSize: MainAxisSize.min, children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 12),
-            child: Column(
-              children: [
-                // Recommended Courses
+      return Scaffold(
+        backgroundColor: Colors.white,
+        body: SingleChildScrollView(
+          child: Center(
+              child: Column(mainAxisSize: MainAxisSize.min, children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 12),
+              child: Column(
+                children: [
+                  // Recommended Courses
 
-                const SizedBox(height: 82),
-                Row(
-                  children: [
-                    Text(
-                      'Hot Searches',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                  const SizedBox(height: 82),
+                  Row(
+                    children: [
+                      Text(
+                        'Hot Searches',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    Expanded(
-                      child: Align(
-                        alignment: Alignment.centerRight,
-                        child: TextButton(
-                          onPressed: () {
-                            // Handle "See All" button tap
-                          },
-                          child: const Padding(
-                            padding: EdgeInsets.only(left: 10.0),
-                            child: Text(
-                              'See All',
-                              style: TextStyle(
-                                color: Color(0xFF4d4dbf),
-                                fontWeight: FontWeight.bold,
+                      Expanded(
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child: TextButton(
+                            onPressed: () {
+                              // Handle "See All" button tap
+                            },
+                            child: const Padding(
+                              padding: EdgeInsets.only(left: 10.0),
+                              child: Text(
+                                'See All',
+                                style: TextStyle(
+                                  color: Color(0xFF4d4dbf),
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                Container(
-                  height: 270,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 10,
-                    itemBuilder: (BuildContext context, int index) {
-                      return Container(
-                        margin: const EdgeInsets.only(right: 15.0),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(5.0),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.3),
-                              offset: const Offset(2.0, 2.0),
-                              blurRadius: 4.0,
-                            ),
-                          ],
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: SizedBox(
-                            width: 180,
-                            height: 180,
-                            child: Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  CourseCard(
-                                    courseTitle: index == 0
-                                        ? 'Python Basics'
-                                        : index == 1
-                                            ? 'Teaching Strategies'
-                                            : index == 2
-                                                ? 'Java Fundamentals'
-                                                : index == 3
-                                                    ? 'JavaScript Mastery'
-                                                    : index == 4
-                                                        ? 'Vue.js Essentials'
-                                                        : index == 5
-                                                            ? 'HTML 5 '
-                                                            : index == 6
-                                                                ? 'CSS Styling'
-                                                                : index == 7
-                                                                    ? 'PHP Web Dev'
-                                                                    : index == 8
-                                                                        ? 'Ruby Programming'
-                                                                        : index ==
-                                                                                9
-                                                                            ? 'React for Beginners'
-                                                                            : 'Default Title',
-                                    authorName: 'Author Name',
-                                    imageAssetPath:
-                                        'images/CourseIntro$index.jpg',
-                                    description: index == 0
-                                        ? 'Versatile and readable programming language'
-                                        : index == 1
-                                            ? 'Educational professional guiding student learning'
-                                            : index == 2
-                                                ? 'Object-oriented, platform-independent programming'
-                                                : index == 3
-                                                    ? 'Dynamic scripting for web development'
-                                                    : index == 4
-                                                        ? 'Progressive JavaScript framework for UIs'
-                                                        : index == 5
-                                                            ? 'Latest standard for web content and structure'
-                                                            : index == 6
-                                                                ? 'Stylesheet language for web page design'
-                                                                : index == 7
-                                                                    ? 'Server-side scripting for dynamic web pages'
-                                                                    : index == 8
-                                                                        ? 'Dynamic, object-oriented programming language'
-                                                                        : index ==
-                                                                                9
-                                                                            ? 'JavaScript library for building UI components'
-                                                                            : 'Default Description', // Default description if index is out of range
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      );
-                    },
+                    ],
                   ),
-                ),
-                SizedBox(height: 10),
-                Row(
-                  children: [
-                    Text(
-                      'Latest',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Expanded(
-                      child: Align(
-                        alignment: Alignment.centerRight,
-                        child: TextButton(
-                          onPressed: () {
-                            // Handle "See All" button tap
-                          },
+                  const SizedBox(height: 8),
+                  Container(
+                    height: 270,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 10,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container(
+                          margin: const EdgeInsets.only(right: 15.0),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(5.0),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.3),
+                                offset: const Offset(2.0, 2.0),
+                                blurRadius: 4.0,
+                              ),
+                            ],
+                          ),
                           child: Padding(
-                            padding: const EdgeInsets.only(left: 10.0),
-                            child: Text(
-                              'See All',
-                              style: TextStyle(
-                                color: Color(0xFF4d4dbf),
-                                fontWeight: FontWeight.bold,
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: SizedBox(
+                              width: 180,
+                              height: 180,
+                              child: Center(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    CourseCard(
+                                      courseTitle: index == 0
+                                          ? 'Python Basics'
+                                          : index == 1
+                                              ? 'Teaching Strategies'
+                                              : index == 2
+                                                  ? 'Java Fundamentals'
+                                                  : index == 3
+                                                      ? 'JavaScript Mastery'
+                                                      : index == 4
+                                                          ? 'Vue.js Essentials'
+                                                          : index == 5
+                                                              ? 'HTML 5 '
+                                                              : index == 6
+                                                                  ? 'CSS Styling'
+                                                                  : index == 7
+                                                                      ? 'PHP Web Dev'
+                                                                      : index ==
+                                                                              8
+                                                                          ? 'Ruby Programming'
+                                                                          : index == 9
+                                                                              ? 'React for Beginners'
+                                                                              : 'Default Title',
+                                      authorName: 'Author Name',
+                                      imageAssetPath:
+                                          'images/CourseIntro$index.jpg',
+                                      description: index == 0
+                                          ? 'Versatile and readable programming language'
+                                          : index == 1
+                                              ? 'Educational professional guiding student learning'
+                                              : index == 2
+                                                  ? 'Object-oriented, platform-independent programming'
+                                                  : index == 3
+                                                      ? 'Dynamic scripting for web development'
+                                                      : index == 4
+                                                          ? 'Progressive JavaScript framework for UIs'
+                                                          : index == 5
+                                                              ? 'Latest standard for web content and structure'
+                                                              : index == 6
+                                                                  ? 'Stylesheet language for web page design'
+                                                                  : index == 7
+                                                                      ? 'Server-side scripting for dynamic web pages'
+                                                                      : index ==
+                                                                              8
+                                                                          ? 'Dynamic, object-oriented programming language'
+                                                                          : index == 9
+                                                                              ? 'JavaScript library for building UI components'
+                                                                              : 'Default Description', // Default description if index is out of range
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Row(
+                    children: [
+                      Text(
+                        'Latest',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Expanded(
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child: TextButton(
+                            onPressed: () {
+                              // Handle "See All" button tap
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 10.0),
+                              child: Text(
+                                'See All',
+                                style: TextStyle(
+                                  color: Color(0xFF4d4dbf),
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 8),
-                Container(
-                  height: 270,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 10,
-                    itemBuilder: (BuildContext context, int index) {
-                      return Container(
-                        margin: EdgeInsets.only(right: 15.0),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(5.0),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.3),
-                              offset: Offset(2.0, 2.0),
-                              blurRadius: 4.0,
-                            ),
-                          ],
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: SizedBox(
-                            width: 180,
-                            height: 180,
-                            child: Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  CourseCard(
-                                    courseTitle: index == 0
-                                        ? 'Python Basics'
-                                        : index == 1
-                                            ? 'Teaching Strategies'
-                                            : index == 2
-                                                ? 'Java Fundamentals'
-                                                : index == 3
-                                                    ? 'JavaScript Mastery'
-                                                    : index == 4
-                                                        ? 'Vue.js Essentials'
-                                                        : index == 5
-                                                            ? 'HTML 5'
-                                                            : index == 6
-                                                                ? 'CSS Styling'
-                                                                : index == 7
-                                                                    ? 'PHP Web Dev'
-                                                                    : index == 8
-                                                                        ? 'Ruby Programming'
-                                                                        : index ==
-                                                                                9
-                                                                            ? 'React for Beginners'
-                                                                            : 'Default Title',
-                                    authorName: 'Author Name',
-                                    imageAssetPath:
-                                        'images/CourseIntro$index.jpg',
-                                    description: index == 0
-                                        ? 'Versatile and readable programming language'
-                                        : index == 1
-                                            ? 'Educational professional guiding student learning'
-                                            : index == 2
-                                                ? 'Object-oriented, platform-independent programming'
-                                                : index == 3
-                                                    ? 'Dynamic scripting for web development'
-                                                    : index == 4
-                                                        ? 'Progressive JavaScript framework for UIs'
-                                                        : index == 5
-                                                            ? 'Latest standard for web content and structure'
-                                                            : index == 6
-                                                                ? 'Stylesheet language for web page design'
-                                                                : index == 7
-                                                                    ? 'Server-side scripting for dynamic web pages'
-                                                                    : index == 8
-                                                                        ? 'Dynamic, object-oriented programming language'
-                                                                        : index ==
-                                                                                9
-                                                                            ? 'JavaScript library for building UI components'
-                                                                            : 'Default Description', // Default description if index is out of range
-                                  ),
-                                ],
+                    ],
+                  ),
+                  SizedBox(height: 8),
+                  Container(
+                    height: 270,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 10,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container(
+                          margin: EdgeInsets.only(right: 15.0),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(5.0),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.3),
+                                offset: Offset(2.0, 2.0),
+                                blurRadius: 4.0,
+                              ),
+                            ],
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: SizedBox(
+                              width: 180,
+                              height: 180,
+                              child: Center(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    CourseCard(
+                                      courseTitle: index == 0
+                                          ? 'Python Basics'
+                                          : index == 1
+                                              ? 'Teaching Strategies'
+                                              : index == 2
+                                                  ? 'Java Fundamentals'
+                                                  : index == 3
+                                                      ? 'JavaScript Mastery'
+                                                      : index == 4
+                                                          ? 'Vue.js Essentials'
+                                                          : index == 5
+                                                              ? 'HTML 5'
+                                                              : index == 6
+                                                                  ? 'CSS Styling'
+                                                                  : index == 7
+                                                                      ? 'PHP Web Dev'
+                                                                      : index ==
+                                                                              8
+                                                                          ? 'Ruby Programming'
+                                                                          : index == 9
+                                                                              ? 'React for Beginners'
+                                                                              : 'Default Title',
+                                      authorName: 'Author Name',
+                                      imageAssetPath:
+                                          'images/CourseIntro$index.jpg',
+                                      description: index == 0
+                                          ? 'Versatile and readable programming language'
+                                          : index == 1
+                                              ? 'Educational professional guiding student learning'
+                                              : index == 2
+                                                  ? 'Object-oriented, platform-independent programming'
+                                                  : index == 3
+                                                      ? 'Dynamic scripting for web development'
+                                                      : index == 4
+                                                          ? 'Progressive JavaScript framework for UIs'
+                                                          : index == 5
+                                                              ? 'Latest standard for web content and structure'
+                                                              : index == 6
+                                                                  ? 'Stylesheet language for web page design'
+                                                                  : index == 7
+                                                                      ? 'Server-side scripting for dynamic web pages'
+                                                                      : index ==
+                                                                              8
+                                                                          ? 'Dynamic, object-oriented programming language'
+                                                                          : index == 9
+                                                                              ? 'JavaScript library for building UI components'
+                                                                              : 'Default Description', // Default description if index is out of range
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      );
-                    },
+                        );
+                      },
+                    ),
                   ),
-                ),
-                SizedBox(height: 20),
-              ],
+                  SizedBox(height: 20),
+                ],
+              ),
             ),
-          ),
-        ])),
+          ])),
+        ),
       );
     }
 
