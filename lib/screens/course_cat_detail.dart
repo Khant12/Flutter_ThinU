@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
-
-
-import 'package:flutter_app/screens/course_lesson_videos.dart';
-import '../components/colors.dart';
-import 'course_single_video.dart';
-
 import 'package:flutter_app/components/colors.dart';
-
 import 'courses.dart';
 
 class CourseCatDetail extends StatefulWidget {
@@ -39,16 +32,6 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
       appBar: AppBar(
         backgroundColor: tuDarkBlue,
         title: Text(widget.selectedCategory,
-<<<<<<< Updated upstream
-            style: const TextStyle(color: Colors.white)),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          color: Colors.white,
-          onPressed: () {
-            Navigator.of(context).popUntil((route) => route.isFirst);
-          },
-        ),
-=======
             style: TextStyle(color: Colors.white)),
         // leading: IconButton(
         //   icon: Icon(Icons.arrow_back),
@@ -57,7 +40,6 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
         //     Navigator.of(context).popUntil((route) => route.isFirst);
         //   },
         // ),
->>>>>>> Stashed changes
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -67,9 +49,9 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
             Row(
               children: [
                 Text(
-                  "Popular With " + widget.selectedCategory,
-                  style: const TextStyle(
-                    fontSize: 24,
+                  widget.selectedCategory,
+                  style: TextStyle(
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -80,8 +62,8 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
                       onPressed: () {
                         // Handle "See All" button tap
                       },
-                      child: const Padding(
-                        padding: EdgeInsets.only(left: 10.0),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
                         child: Text(
                           'See All',
                           style: TextStyle(
@@ -95,7 +77,7 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
                 ),
               ],
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: 8),
             Container(
               height: 280,
               child: ListView.builder(
@@ -103,14 +85,14 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
                 itemCount: 10,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                    margin: const EdgeInsets.only(right: 10.0),
+                    margin: EdgeInsets.only(right: 10.0),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(5.0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withOpacity(0.3),
-                          offset: const Offset(2.0, 2.0),
+                          offset: Offset(2.0, 2.0),
                           blurRadius: 4.0,
                         ),
                       ],
@@ -179,11 +161,7 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
                 },
               ),
             ),
-<<<<<<< Updated upstream
-            const SizedBox(height: 20),
-=======
             // SizedBox(height: 10),
->>>>>>> Stashed changes
             // SingleChildScrollView(
             //   scrollDirection: Axis.horizontal,
             //   child: Row(
@@ -215,13 +193,13 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
             //     }).toList(),
             //   ),
             // ),
-            const SizedBox(height: 16),
+            SizedBox(height: 16),
             Row(
               children: [
-                const Text(
-                  'Recommended For You',
+                Text(
+                  'Recommendation',
                   style: TextStyle(
-                    fontSize: 24,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -232,8 +210,8 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
                       onPressed: () {
                         // Handle "See All" button tap
                       },
-                      child: const Padding(
-                        padding: EdgeInsets.only(left: 10.0),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
                         child: Text(
                           'See All',
                           style: TextStyle(
@@ -247,7 +225,7 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
                 ),
               ],
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: 8),
             Container(
               height: 280,
               child: ListView.builder(
@@ -255,14 +233,14 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
                 itemCount: 10,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                    margin: const EdgeInsets.only(right: 10.0),
+                    margin: EdgeInsets.only(right: 10.0),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(5.0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withOpacity(0.3),
-                          offset: const Offset(2.0, 2.0),
+                          offset: Offset(2.0, 2.0),
                           blurRadius: 4.0,
                         ),
                       ],
@@ -331,13 +309,13 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
                 },
               ),
             ),
-            const SizedBox(height: 16),
+            SizedBox(height: 16),
             Row(
               children: [
-                const Text(
+                Text(
                   'Latest',
                   style: TextStyle(
-                    fontSize: 24,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -348,8 +326,8 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
                       onPressed: () {
                         // Handle "See All" button tap
                       },
-                      child: const Padding(
-                        padding: EdgeInsets.only(left: 10.0),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
                         child: Text(
                           'See All',
                           style: TextStyle(
@@ -363,7 +341,7 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
                 ),
               ],
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: 8),
             Container(
               height: 280,
               child: ListView.builder(
@@ -371,14 +349,14 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
                 itemCount: 10,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                    margin: const EdgeInsets.only(right: 10.0),
+                    margin: EdgeInsets.only(right: 10.0),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(5.0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withOpacity(0.3),
-                          offset: const Offset(2.0, 2.0),
+                          offset: Offset(2.0, 2.0),
                           blurRadius: 4.0,
                         ),
                       ],
@@ -447,99 +425,10 @@ class _CourseCatDetailState extends State<CourseCatDetail> {
                 },
               ),
             ),
-            const SizedBox(height: 16),
+            SizedBox(height: 16),
           ],
         ),
       ),
     );
   }
 }
-<<<<<<< Updated upstream
-
-// class CourseCard extends StatelessWidget {
-//   final String courseTitle;
-//   final String authorName;
-//   final String imageAssetPath;
-//   final double titleFontSize;
-//
-//   CourseCard({
-//     required this.courseTitle,
-//     required this.authorName,
-//     required this.imageAssetPath,
-//     this.titleFontSize = 16.0,
-//     required String description,
-//   });
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       width: 180,
-//       margin: const EdgeInsets.only(right: 16),
-//       child: Column(
-//         crossAxisAlignment: CrossAxisAlignment.start,
-//         children: [
-//           GestureDetector(
-//             onTap: () {
-//               Navigator.push(
-//                 context,
-//                 MaterialPageRoute(
-//                   builder: (context) => CourseDetailScreen(
-//                     courseTitle: courseTitle,
-//                     title: '',
-//                   ),
-//                 ),
-//               );
-//             },
-//             child: Container(
-//               height: 120,
-//               decoration: BoxDecoration(
-//                 borderRadius: BorderRadius.circular(8),
-//                 image: DecorationImage(
-//                   image: AssetImage(imageAssetPath),
-//                   fit: BoxFit.cover,
-//                 ),
-//               ),
-//             ),
-//           ),
-//           const SizedBox(height: 8),
-//           Text(
-//             courseTitle,
-//             style: const TextStyle(
-//               fontWeight: FontWeight.bold,
-//               fontSize: 16,
-//             ),
-//           ),
-//           Text(
-//             authorName,
-//             style: const TextStyle(
-//               color: Colors.grey,
-//             ),
-//           ),
-//           const SizedBox(height: 8),
-//           Padding(
-//             padding: const EdgeInsets.only(left: 0.0),
-//             child: ElevatedButton(
-//               onPressed: () {
-//                 Navigator.push(
-//                   context,
-//                   MaterialPageRoute(
-//                     builder: (context) => CourseDetailScreen(
-//                       courseTitle: courseTitle,
-//                       title: '',
-//                     ),
-//                   ),
-//                 );
-//               },
-//               child: const Text(
-//                 'View Course',
-//                 style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
-//               ),
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
-=======
->>>>>>> Stashed changes

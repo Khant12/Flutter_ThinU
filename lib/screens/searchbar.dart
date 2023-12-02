@@ -87,8 +87,9 @@ class _SearchPageState extends State<SearchPage> {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else {
             categories = snapshot.data ?? [];
+
             return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12),
+              padding: const EdgeInsets.only(top: 5, left: 6, right: 6),
               child: FloatingSearchBar(
                 controller: controller,
                 body: SearchResultsListView(
@@ -144,7 +145,7 @@ class _SearchPageState extends State<SearchPage> {
                                 'Start searching',
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
-                                style: Theme.of(context).textTheme.caption,
+                                style: Theme.of(context).textTheme.labelLarge,
                               ),
                             );
                           } else if (filteredSearchHistory!.isEmpty) {
@@ -220,26 +221,19 @@ class SearchResultsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (searchTerm == null) {
-      return Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Icon(
-              Icons.search,
-              size: 64,
       return SingleChildScrollView(
         child: Center(
             child: Column(mainAxisSize: MainAxisSize.min, children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.only(left: 12),
             child: Column(
               children: [
                 // Recommended Courses
 
-                const SizedBox(height: 90),
+                const SizedBox(height: 82),
                 Row(
                   children: [
-                    const Text(
+                    Text(
                       'Hot Searches',
                       style: TextStyle(
                         fontSize: 20,
@@ -276,7 +270,7 @@ class SearchResultsListView extends StatelessWidget {
                     itemCount: 10,
                     itemBuilder: (BuildContext context, int index) {
                       return Container(
-                        margin: const EdgeInsets.only(right: 10.0),
+                        margin: const EdgeInsets.only(right: 15.0),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(5.0),
@@ -395,7 +389,7 @@ class SearchResultsListView extends StatelessWidget {
                     itemCount: 10,
                     itemBuilder: (BuildContext context, int index) {
                       return Container(
-                        margin: EdgeInsets.only(right: 10.0),
+                        margin: EdgeInsets.only(right: 15.0),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(5.0),
@@ -474,12 +468,12 @@ class SearchResultsListView extends StatelessWidget {
                     },
                   ),
                 ),
+                SizedBox(height: 20),
               ],
             ),
           ),
         ])),
       );
-            
     }
 
     final filteredCategories = categories
