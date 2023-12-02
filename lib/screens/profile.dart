@@ -101,7 +101,7 @@ class _ProfileState extends State<Profile> {
             child: CircularProgressIndicator(),
           )
         : Padding(
-            padding: EdgeInsets.only(top: 30, left: 30, right: 30),
+            padding: EdgeInsets.only(top: 30, left: 20, right: 20),
             child: ListView(
               children: [
                 Center(
@@ -259,7 +259,7 @@ class _ProfileState extends State<Profile> {
 
   Widget _buildSection(String title, IconData icon) {
     return Card(
-      elevation: 2,
+      elevation: 1,
       margin: const EdgeInsets.symmetric(vertical: 4),
       child: ListTile(
         leading: Icon(icon),
@@ -277,7 +277,7 @@ class _ProfileState extends State<Profile> {
   Widget _buildHelpandSupportSection(
       String title, IconData icon, BuildContext context) {
     return Card(
-      elevation: 2,
+      elevation: 1,
       margin: const EdgeInsets.symmetric(vertical: 4),
       child: ListTile(
         leading: Icon(icon),
@@ -299,7 +299,7 @@ class _ProfileState extends State<Profile> {
 
   Widget _buildEditProfileSection(BuildContext context) {
     return Card(
-      elevation: 2,
+      elevation: 1,
       margin: const EdgeInsets.symmetric(vertical: 4),
       child: ListTile(
         leading: const Icon(Icons.edit),
@@ -321,7 +321,7 @@ class _ProfileState extends State<Profile> {
 
   Widget _buildPaymentSection(BuildContext context) {
     return Card(
-      elevation: 2,
+      elevation: 1,
       margin: const EdgeInsets.symmetric(vertical: 4),
       child: ListTile(
         leading: const Icon(Icons.history),
@@ -343,7 +343,7 @@ class _ProfileState extends State<Profile> {
 
   Widget _buildSubscriptionSection(BuildContext context) {
     return Card(
-      elevation: 2,
+      elevation: 1,
       margin: const EdgeInsets.symmetric(vertical: 4),
       child: ListTile(
         leading: const Icon(Icons.payment),
@@ -365,7 +365,7 @@ class _ProfileState extends State<Profile> {
 
   Widget _buildSettingSection(BuildContext context) {
     return Card(
-      elevation: 2,
+      elevation: 1,
       margin: const EdgeInsets.symmetric(vertical: 4),
       child: ListTile(
         leading: const Icon(Icons.settings),
@@ -387,7 +387,7 @@ class _ProfileState extends State<Profile> {
 
   Widget _buildAbtUsSection(BuildContext context) {
     return Card(
-      elevation: 2,
+      elevation: 1,
       margin: const EdgeInsets.symmetric(vertical: 4),
       child: ListTile(
         leading: const Icon(Icons.info),
@@ -409,7 +409,7 @@ class _ProfileState extends State<Profile> {
 
   Widget _buildSignOutButton(BuildContext context) {
     return Card(
-      elevation: 2,
+      elevation: 1,
       margin: const EdgeInsets.symmetric(vertical: 4),
       child: ListTile(
         leading: const Icon(
